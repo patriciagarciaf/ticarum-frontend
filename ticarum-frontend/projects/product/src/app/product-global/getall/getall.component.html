@@ -1,0 +1,12 @@
+<div class="containerget">
+    <section>
+        <h2 class="title">
+            Todos los productos
+        </h2>
+        <div (click) = "handlerclick($event)">
+            <cap-product-item [product] = "product" *ngFor="let product of products"></cap-product-item>
+            <!-- TODO: poner cap-product-item -->
+        </div> 
+    </section>
+    
+  </div>

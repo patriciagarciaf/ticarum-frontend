@@ -9,9 +9,13 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "invoice-lib": [
-        "dist/invoice-lib/invoice-lib",
-        "dist/invoice-lib"
+      "core-lib": [
+        "dist/core-lib/core-lib",
+        "dist/core-lib"
+      ],
+      "product-lib": [
+        "dist/product-lib/product-lib",
+        "dist/product-lib"
       ]
     },
     "sourceMap": true,
