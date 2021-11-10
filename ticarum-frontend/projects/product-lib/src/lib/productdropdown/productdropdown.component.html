@@ -1,0 +1,8 @@
+<h1>Añade los productos</h1>
+<select [(ngModel)]="default" (ngModelChange)="addproduct($event)">
+    <option [ngValue]="default" disabled selected>Selecciona los productos</option>
+    <option *ngFor="let product of products" [ngValue]="product">{{product.name}}</option>
+  </select>
+  <div class="productList" (click) = "removeproduct($event)">
+    <tic-product-item [product] = "product" *ngFor="let product of selectedproducts"></tic-product-item>
+  </div>

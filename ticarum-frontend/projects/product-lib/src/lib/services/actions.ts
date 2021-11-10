@@ -1,3 +1,5 @@
 export enum Actions{
-    selected
+    selected,
+    remove,
+    add
 }

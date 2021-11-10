@@ -2,6 +2,8 @@
  * Public API Surface of product-lib
  */
 
-export * from './lib/product-lib.service';
-export * from './lib/product-lib.component';
+export * from './lib/productitem/productitem.component';
+export * from './lib/productdropdown/productdropdown.component';
 export * from './lib/product-lib.module';
+export * from './lib/services/product.service';
+export * from './lib/services/actions';

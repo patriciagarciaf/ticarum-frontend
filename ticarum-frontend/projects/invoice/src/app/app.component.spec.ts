@@ -1,35 +1,36 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { InvoiceComponent } from './app.component';
 
-describe('AppComponent', () => {
+
+describe('InvoiceComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        InvoiceComponent
       ],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create the Invoice', () => {
+    const fixture = TestBed.createComponent(InvoiceComponent);
+    const Invoice = fixture.componentInstance;
+    expect(Invoice).toBeTruthy();
   });
 
   it(`should have as title 'invoice'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('invoice');
+    const fixture = TestBed.createComponent(InvoiceComponent);
+    const Invoice = fixture.componentInstance;
+    expect(Invoice.title).toEqual('invoice');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(InvoiceComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('invoice app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('invoice Invoice is running!');
   });
 });

@@ -1,10 +1,11 @@
-<div class="container">
+<div class="containerget">
     <section>
-        <h2>
+        <h2 class="title">
             Todos los productos
         </h2>
         <div (click) = "handlerclick($event)">
             <tic-product-item [product] = "product" *ngFor="let product of products"></tic-product-item>
         </div>
     </section>
+    
   </div>

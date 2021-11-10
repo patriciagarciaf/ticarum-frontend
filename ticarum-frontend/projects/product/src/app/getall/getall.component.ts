@@ -25,11 +25,20 @@ export class GetallComponent implements OnInit {
   ngOnInit(): void {
     this.dispose = this.productService.getAll().subscribe(data => this.products = data);
   }
-  handlerclick(event:any){ 
-    if(event) {
-       this.selectedProducts.push()//TODO llenar lista
-       console.log(this.selectedProducts)
+  handlerclick(event: any) {
+
+    const dataset = event.target.dataset;
+    if(dataset){
+      
     }
+    if (event.target.tagName == "svg" || event.target.tagName == "path") {
+      for (let i = 0; i < this.products.length; i++) {
+        if (event.target.closest("div").id == this.products[i].id) {
+          this.products.splice(i, 1);
+        }
+      }
+    }
+    
   }
 
 }

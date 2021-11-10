@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppModule } from '../../projects/invoice/src/app/app.module';
+import { InvoiceModule } from '../../projects/invoice/src/app/app.module';
 
 const routes: Routes = [
   {path: 'invoice', loadChildren: () => import('../../projects/invoice/src/app/app.module').then(m=>m.InvoiceSharedModule)},
@@ -8,7 +8,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-  AppModule],
+  InvoiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

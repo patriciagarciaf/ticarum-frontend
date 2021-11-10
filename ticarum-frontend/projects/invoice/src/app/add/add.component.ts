@@ -11,9 +11,8 @@ export class AddComponent {
   @Output() submit = new EventEmitter<Invoice>();
 
   formGroup: FormGroup = new FormGroup({
-    name: new FormControl('', Validators.required),
-    image: new FormControl('', Validators.required),
-    ingredients: new FormControl('', Validators.required)
+    NIF: new FormControl('', Validators.required),
+    products: new FormControl('', Validators.required)
   });
 
   onSubmit(event: Event){

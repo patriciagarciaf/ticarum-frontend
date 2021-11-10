@@ -1,39 +1,49 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { AddComponent } from './add/add.component';
 import { FormsModule } from '@angular/forms';
-import { CoreLibComponent, CoreLibModule } from 'projects/core-lib/src/public-api';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { CoreLibModule } from 'projects/core-lib/src/public-api';
+import { InvoiceComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductLibModule } from 'projects/product-lib/src/public-api';
+import { RootRoutingModule, ChildRoutingModule } from 'projects/product/src/app/product-routing.module';
 
 const providers: any[] = []
 
 @NgModule({
   declarations: [
-    AppComponent,
+    InvoiceComponent,
     AddComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule,
+    RootRoutingModule,
     FormsModule,
-    CoreLibModule
+    HttpClientModule,
+    CoreLibModule,
+    ProductLibModule,
   ],
   providers: providers,
-  bootstrap: [AppComponent]
+  bootstrap: [InvoiceComponent]
 })
-export class AppModule {
+export class InvoiceModule {
   constructor(){}
- }
+}
 
- @NgModule({})
- export class InvoiceSharedModule {
-   static forRoot(): ModuleWithProviders {
-     return {
-       ngModule: AppModule,
-       providers: providers,
-     }
-   }
- }
+@NgModule({
+  imports:[
+    FormsModule,
+    ChildRoutingModule,
+  ]
+})
+export class InvoiceSharedModule {
+  static forRoot(): ModuleWithProviders<InvoiceModule> {
+    return {
+      ngModule: InvoiceModule,
+      providers: providers,
+    }
+  }
+}
