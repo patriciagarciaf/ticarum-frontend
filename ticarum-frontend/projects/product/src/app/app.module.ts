@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { GetallComponent } from './product-global/getall/getall.component';
-import { FormComponent } from './product-global/form/form.component';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { ProductBaseComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreLibModule } from 'projects/core-lib/src/public-api';
+import { ProductComponent } from './product.component';
+import { ProductitemComponent } from './productitem/productitem.component';
+
 
 const providers: any[] = [];
 
 @NgModule({
   declarations: [
-    ProductBaseComponent
+    ProductBaseComponent,
+    ProductComponent,
+    ProductitemComponent
   ],
   imports: [
     BrowserModule,
